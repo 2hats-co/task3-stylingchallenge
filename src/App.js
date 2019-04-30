@@ -1,28 +1,51 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+import { Container } from '@material-ui/core';
+
+import TopBar from './components/TopBar';
+import ChipArray from './components/ChipArray';
+import Panel from './components/Panel';
+
+const App = props => {
+  return (
+    <div>
+      <TopBar />
+
+      <Container maxWidth="md">
+        <Panel title="Styling" body="It’s never as easy as it seems." />
+        <Panel title="CSS" body="Is a weird beast." />
+        <Panel
+          title="Here’s some chips for you"
+          body={
+            <ChipArray
+              items={[
+                'Grace Bay',
+                'Baia do Sancho',
+                'Varadero Beach',
+                'Eagle Beach',
+                'Seven Mile Beach',
+                'La Concha Beach',
+                'Clearwater Beach',
+                'Seven Mile Beach',
+                'Bavaro Beach',
+                'Playa Norte',
+                'Elafonissi Beach',
+                'Falesia Beach',
+                'Fig Tree Bay',
+                'Bournemouth Beach',
+                'Anse Lazio',
+                'Manly Beach',
+                'Santa Monica Beach',
+                'Agonda Beach',
+                'Kleopatra Beach',
+                'Galapagos Beach',
+              ]}
+            />
+          }
+        />
+      </Container>
+    </div>
+  );
+};
 
 export default App;
