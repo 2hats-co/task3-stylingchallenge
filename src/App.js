@@ -1,13 +1,37 @@
 import React from 'react';
 
-import { Container } from '@material-ui/core';
+import { Container, createMuiTheme } from '@material-ui/core';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { pink } from "@material-ui/core/colors";
 
 import TopBar from './components/TopBar';
 import ChipArray from './components/ChipArray';
 import Panel from './components/Panel';
 
+const theme = createMuiTheme({
+  palette: {
+    primary: pink,
+  },
+  typography: {
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      'Work Sans',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+  },
+});
+
 const App = props => {
   return (
+    <MuiThemeProvider theme={theme}>
     <div>
       <TopBar />
 
@@ -45,6 +69,7 @@ const App = props => {
         />
       </Container>
     </div>
+    </MuiThemeProvider>
   );
 };
 
