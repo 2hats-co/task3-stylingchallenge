@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { left } from '@material-ui/system'
+
 import {
   AppBar,
   Toolbar,
@@ -17,10 +19,13 @@ const styles = {
     // alignSelf: 'flex-end',
     // color: 'primary'
     // color: theme.palette.primary
-    position: "absolute",
+    position: 'absolute',
     // top: '0',
     right: '3%'
   },
+  stylingChallengeLabel: {
+    marginLeft: '8px'
+  }
 };
 
 const TopBar = props => {
@@ -32,7 +37,7 @@ const TopBar = props => {
           <MenuIcon />
         </IconButton>
 
-        <Typography variant="h6" color="inherit">
+        <Typography variant="h6" color="inherit" className={classes.stylingChallengeLabel}>
           Styling Challenge
         </Typography>
 
