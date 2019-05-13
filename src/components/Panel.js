@@ -14,14 +14,18 @@ const SCExpansionPanel = styled(ExpansionPanel)({
   boxShadow: 'none'
 });
 
+const SCExpansionPanelSummary = styled(ExpansionPanelSummary)({
+  padding: '0'
+});
+
 const Panel = props => {
   const { title, body } = props;
 
   return (
     <SCExpansionPanel color="primary">
-      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+      <SCExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
         <Typography variant="h6">{title}</Typography>
-      </ExpansionPanelSummary>
+      </SCExpansionPanelSummary>
 
       <ExpansionPanelDetails>
         {typeof body === 'string' ? <Typography>{body}</Typography> : body}
