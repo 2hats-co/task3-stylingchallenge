@@ -23,7 +23,7 @@ const Panel = props => {
         <Typography variant="h6">{title}</Typography>
       </ExpansionPanelSummary>
 
-      <ExpansionPanelDetails> {/*margin 0 8px 8px 0*/}
+      <ExpansionPanelDetails>
         {typeof body === 'string' ? <Typography>{body}</Typography> : body}
         {/* Need to do this. Otherwise will get <div> cannot be a descendant of <p> DOM validation warning */}
       </ExpansionPanelDetails>
