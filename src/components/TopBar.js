@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { left } from '@material-ui/system'
-
 import {
   AppBar,
   Toolbar,

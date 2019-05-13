@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, createMuiTheme } from '@material-ui/core';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import { pink, deepPurple } from "@material-ui/core/colors/";
+import { styled } from '@material-ui/styles';
 
 import TopBar from './components/TopBar';
 import ChipArray from './components/ChipArray';
@@ -14,7 +15,6 @@ const theme = createMuiTheme({
     secondary: deepPurple
   },
   typography: {
-    // Use the system font instead of the default Roboto font.
     fontFamily: [
       'Work Sans',
       'BlinkMacSystemFont',
@@ -30,14 +30,18 @@ const theme = createMuiTheme({
   },
 });
 
+const PanelContainer = styled(Container)({
+  marginTop: '70px',
+  maxWidth: 'md'
+});
+
 const App = props => {
   return (
     <MuiThemeProvider theme={theme}>
-    <div>
       <TopBar />
 
-      <Container maxWidth="md">
-        <Panel title="Styling" body="It’s never as easy as it seems." />
+      <PanelContainer>
+        <Panel title="Styling" body="It’s never as easy as it seems."/>
         <Panel title="CSS" body="Is a weird beast." />
         <Panel
           title="Here’s some chips for you"
@@ -68,8 +72,7 @@ const App = props => {
             />
           }
         />
-      </Container>
-    </div>
+      </PanelContainer>
     </MuiThemeProvider>
   );
 };
