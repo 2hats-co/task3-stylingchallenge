@@ -13,12 +13,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const styles = {
   goButton: {
-    // flexDirection: 'row',
-    // alignSelf: 'flex-end',
-    // color: 'primary'
-    // color: theme.palette.primary
     position: 'absolute',
-    // top: '0',
     right: '3%'
   },
   stylingChallengeLabel: {

@@ -33,7 +33,6 @@ const theme = createMuiTheme({
 const PanelContainer = styled(Container)({
   marginTop: '70px',
   maxWidth: 'md',
-  // color: 'primary'
 });
 
 const App = props => {
@@ -41,7 +40,7 @@ const App = props => {
     <MuiThemeProvider theme={theme}>
       <TopBar />
 
-      <PanelContainer color="primary">
+      <PanelContainer>
         <Panel title="Styling" body="It’s never as easy as it seems."/>
         <Panel title="CSS" body="Is a weird beast." />
         <Panel
