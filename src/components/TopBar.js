@@ -6,12 +6,12 @@ import {
   IconButton,
   Button,
   Typography,
-  withStyles
 } from '@material-ui/core';
-
 import MenuIcon from '@material-ui/icons/Menu';
 
-const styles = {
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles({
   goButton: {
     position: 'absolute',
     right: '3%'
@@ -19,12 +19,13 @@ const styles = {
   stylingChallengeLabel: {
     marginLeft: '8px'
   }
-};
+});
 
 const TopBar = props => {
-  const { classes } = props;
+  const classes = useStyles();
+
   return (
-    <AppBar position="fixed" color="secondary">
+    <AppBar position="fixed" color="primary">
       <Toolbar>
         <IconButton edge="start" color="inherit" aria-label="Menu">
           <MenuIcon />
@@ -34,10 +35,10 @@ const TopBar = props => {
           Styling Challenge
         </Typography>
 
-        <Button variant="contained" className={classes.goButton} color="primary">Let’s go!</Button>
+        <Button variant="contained" className={classes.goButton} color="secondary">Let’s go!</Button>
       </Toolbar>
     </AppBar>
   );
 };
 
-export default withStyles(styles)(TopBar);
+export default TopBar;

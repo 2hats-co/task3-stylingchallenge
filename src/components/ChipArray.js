@@ -1,19 +1,22 @@
 import React from 'react';
 
 import { Chip } from '@material-ui/core';
-import { styled } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles'
 
-const SCChip = styled(Chip)({
-  margin: '0 8px 8px 0',
+const useStyles = makeStyles({
+  chip: {
+    margin: '0 8px 8px 0',
+  },
 });
 
 const ChipArray = props => {
   const { items } = props;
+  const classes = useStyles();
 
   return (
     <div>
       {items.map((x, i) => (
-        <SCChip key={`${i}-${x}`} label={x} color="primary"/>
+        <Chip className={classes.chip} key={`${i}-${x}`} label={x} variant='outlined' color='secondary'/>
       ))}
     </div>
   );

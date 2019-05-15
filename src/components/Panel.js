@@ -7,10 +7,10 @@ import {
   Typography,
 } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { withStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
 
-const styles = {
+const useStyles = makeStyles({
   expanded: {
     margin: '0',
     minHeight: '0',
@@ -21,10 +21,11 @@ const styles = {
   expansionPanelSummary: {
     padding: '0'
   }
-};
+});
 
 const Panel = props => {
-  const { title, body, classes } = props;
+  const { title, body } = props;
+  const classes = useStyles();
 
   return (
     <ExpansionPanel classes={{
@@ -50,4 +51,4 @@ Panel.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Panel);
+export default Panel;
