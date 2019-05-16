@@ -11,21 +11,25 @@ import { makeStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
-  expanded: {
-    margin: '0',
-    minHeight: '0',
-  },
   expansionPanel: {
-    boxShadow: 'none'
+    boxShadow: 'none',
+    '&$expanded': {
+      margin: '0'
+    }
   },
   expansionPanelSummary: {
-    padding: '0'
+    padding: '0',
+    '&$expanded': {
+      margin: '0'
+    }
   },
   expansionPanelDetails: {
     display: 'flex',
     padding: '8px 0 24px',
     margin: 'auto -4px',
-  }
+  },
+  expanded: {
+  },
 });
 
 const Panel = props => {
@@ -39,6 +43,7 @@ const Panel = props => {
     }} >
       <ExpansionPanelSummary classes={{
         root: classes.expansionPanelSummary,
+        content: classes.expansionPanelSummary,
         expanded: classes.expanded
       }} expandIcon={<ExpandMoreIcon />} >
         <Typography variant="h6">{title}</Typography>
