@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles({
   chip: {
-    margin: '0 4px 8px',
+    margin: '8px 4px 0',
   },
 });
 

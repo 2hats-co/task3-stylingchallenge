@@ -35,7 +35,12 @@ const useStyles = makeStyles({
   container: {
     marginTop: '70px',
     maxWidth: 'md',
-  }
+  },
+  expansionPanelDetails: {
+    display: 'flex',
+    padding: '8px 0 24px',
+    margin: 'auto -4px',
+  },
 });
 
 const App = props => {
@@ -49,6 +54,7 @@ const App = props => {
         <Panel title="Styling" body="It’s never as easy as it seems."/>
         <Panel title="CSS" body="Is a weird beast." />
         <Panel
+          detailPanelStyle={classes.expansionPanelDetails}
           title="Here’s some chips for you"
           body={
             <ChipArray
