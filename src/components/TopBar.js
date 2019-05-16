@@ -31,11 +31,11 @@ const TopBar = props => {
           <MenuIcon />
         </IconButton>
 
-        <Typography variant="h6" color="inherit" className={classes.stylingChallengeLabel}>
+        <Typography className={classes.stylingChallengeLabel} variant="h6" color="inherit" >
           Styling Challenge
         </Typography>
 
-        <Button variant="contained" className={classes.goButton} color="secondary">Let’s go!</Button>
+        <Button className={classes.goButton} variant="contained" color="secondary">Let’s go!</Button>
       </Toolbar>
     </AppBar>
   );

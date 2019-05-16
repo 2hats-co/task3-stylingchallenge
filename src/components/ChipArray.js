@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/styles'
 
 const useStyles = makeStyles({
   chip: {
-    margin: '0 8px 8px 0',
+    margin: '0 4px 8px',
   },
 });
 
@@ -16,7 +16,7 @@ const ChipArray = props => {
   return (
     <div>
       {items.map((x, i) => (
-        <Chip className={classes.chip} key={`${i}-${x}`} label={x} variant='outlined' color='secondary'/>
+        <Chip className={classes.chip} key={`${i}-${x}`} label={x} variant='outlined' color='secondary' />
       ))}
     </div>
   );

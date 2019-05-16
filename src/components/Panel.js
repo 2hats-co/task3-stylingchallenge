@@ -20,6 +20,11 @@ const useStyles = makeStyles({
   },
   expansionPanelSummary: {
     padding: '0'
+  },
+  expansionPanelDetails: {
+    display: 'flex',
+    padding: '8px 0 24px',
+    margin: 'auto -4px',
   }
 });
 
@@ -39,7 +44,7 @@ const Panel = props => {
         <Typography variant="h6">{title}</Typography>
       </ExpansionPanelSummary>
 
-      <ExpansionPanelDetails color="primary">
+      <ExpansionPanelDetails className={classes.expansionPanelDetails} color="primary">
         {typeof body === 'string' ? <Typography>{body}</Typography> : body}
         {/* Need to do this. Otherwise will get <div> cannot be a descendant of <p> DOM validation warning */}
       </ExpansionPanelDetails>
