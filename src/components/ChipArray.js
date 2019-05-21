@@ -7,6 +7,9 @@ const useStyles = makeStyles({
   chip: {
     margin: '8px 4px 0',
   },
+  chipArray: {
+    margin: '-8px -28px 0',
+  },
 });
 
 const ChipArray = props => {
@@ -14,7 +17,7 @@ const ChipArray = props => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.chipArray}>
       {items.map((x, i) => (
         <Chip className={classes.chip} key={`${i}-${x}`} label={x} variant='outlined' color='secondary' />
       ))}
