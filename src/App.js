@@ -34,7 +34,6 @@ const theme = createMuiTheme({
 const useStyles = makeStyles({
   container: {
     marginTop: '70px',
-    maxWidth: 'md',
   },
 });
 
@@ -45,7 +44,7 @@ const App = props => {
     <MuiThemeProvider theme={theme} >
       <TopBar />
 
-      <Container className={classes.container} >
+      <Container className={classes.container} maxWidth="md">
         <Panel title="Styling" body="It’s never as easy as it seems."/>
         <Panel title="CSS" body="Is a weird beast." />
         <Panel
