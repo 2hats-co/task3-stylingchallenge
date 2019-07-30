@@ -1,17 +1,39 @@
 import React from 'react';
 
-import { Container } from '@material-ui/core';
+import { Container, createMuiTheme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/styles';
 
 import TopBar from './components/TopBar';
 import ChipArray from './components/ChipArray';
 import Panel from './components/Panel';
+import { ThemeProvider } from '@material-ui/styles';
+import { purple, pink } from '@material-ui/core/colors';
+
+const theme = createMuiTheme({
+palette: {
+  primary: purple,
+  secondary: pink,
+},
+
+  typography: { fontFamily: ['Work Sans', 'sans-serif'].join(',') },
+})
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    marginTop: 70,
+  },
+  panel: {
+    borderTop: 0,
+  }
+}))
 
 const App = props => {
+  const classes = useStyles();
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <TopBar />
 
-      <Container maxWidth="md">
+      <Container className={classes.container} maxWidth="md">
         <Panel title="Styling" body="It’s never as easy as it seems." />
         <Panel title="CSS" body="Is a weird beast." />
         <Panel
@@ -44,7 +66,7 @@ const App = props => {
           }
         />
       </Container>
-    </div>
+    </ThemeProvider>
   );
 };
 
